@@ -4,18 +4,11 @@ const ACTIVE_CLASS = "is-active";
 const $toolbar = document.querySelector(".toolbar");
 const $editor = document.querySelector(".editor");
 const $actionButtons = $toolbar.querySelectorAll("button");
-
-/**
- * wrapper for execCommand, always setting to use CSS style.
- */
 const exec = (cmd, param = null) => {
   document.execCommand("styleWithCSS", false);
   document.execCommand(cmd, false, param);
 };
 
-/**
- * Get X, Y and selection width
- */
 const getSelectionCoordinates = (selection) => {
   const r = selection.getRangeAt(0);
   const clip = r.getClientRects();
@@ -26,9 +19,6 @@ const getSelectionCoordinates = (selection) => {
   return { x, y, width };
 };
 
-/**
- * Given the selection, move the toolbar to the center of selection.
- */
 const moveToolbar = (e) => {
   const selection = document.getSelection();
   const coordinates = getSelectionCoordinates(selection);
@@ -62,7 +52,7 @@ const toggleActionState = (action, isActive) => {
 };
 
 const updateActionStatus = (selection) => {
-  const actions = ["bold", "italic", "underline"];
+  const actions = ["bold"];
   const cssText = getCssText(selection);
 
   actions.forEach((action) => {
