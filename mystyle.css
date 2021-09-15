@@ -1,0 +1,63 @@
+body {
+  background-color: #f3f3f3;
+}
+
+.editor {
+  position: relative;
+
+  line-height: 1.6;
+  font-family: Arial, x-locale-body, sans-serif;
+  letter-spacing: -0.00278rem;
+  font-size: 1rem;
+
+  text-align: justify;
+
+  min-height: 70vh;
+  width: 500px;
+  padding: 2rem 1.5rem;
+  margin: 15vh auto;
+  border-radius: 3px;
+  outline: 0;
+  background-color: #fff;
+  box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* mimic paragraph */
+.editor > div:not(:first-child) {
+  padding-top: 1rem;
+}
+
+.toolbar {
+  --left: 0;
+  --top: 0;
+
+  display: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+
+  background: linear-gradient(to bottom, #000, #333 70%);
+
+  position: absolute;
+  transform: translate(-50%, -120%);
+
+  /* @TODO: use transform */
+  left: var(--left);
+  top: var(--top);
+}
+
+.toolbar button {
+  padding: 0 2px;
+  border: 0;
+  background-color: transparent;
+}
+
+.toolbar .action-icon {
+  fill: #fff;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.toolbar button:hover .action-icon,
+.toolbar button.is-active .action-icon {
+  opacity: 1;
+}
