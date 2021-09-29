@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+.bold 
+{ font-weight: bold; }
+
+</style>
+</head>
+<body>
+
+<p>Click the button to add the "mystyle" class to DIV.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p><strong>Note:</strong> The classList property is not supported in Internet Explorer 9 and earlier versions.</p>
+
+<div class="myDIV">
+I am a DIV element
+</div>
+
+<script>
+function myFunction() {
+  $(".myDIV").toggleClass("bold");
+}
+</script>
+
+</body>
+</html>
